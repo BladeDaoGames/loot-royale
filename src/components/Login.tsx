@@ -11,7 +11,7 @@ const Login = () => {
           src="../../public/BackGround.png"
           alt="background"
         />
-        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
       </div>
       <div className="flex flex-col gap-4 pt-10 items-center absolute bottom-20 right-20 w-5/12 h-1/2 bg-white-beige-50 rounded-lg shadow-lg p-5 z-20">
         <h2 className="text-8xl">Loot Royale</h2>
