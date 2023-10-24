@@ -1,8 +1,15 @@
 import "./Login.css";
 import { BsDiscord } from "react-icons/bs";
 import { FaTwitter } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handlePlayClick = () => {
+    navigate("/rooms");
+  };
   return (
     <>
       <div className="relative min-h-screen">
@@ -15,7 +22,7 @@ const Login = () => {
       </div>
       <div className="flex flex-col gap-4 pt-10 items-center absolute bottom-20 right-20 w-5/12 h-1/2 bg-white-beige-50 rounded-lg shadow-lg p-5 z-20">
         <h2 className="text-8xl">Loot Royale</h2>
-        <button className="w-4/12 h-4/12 bg-beige-100 text-4xl text-white shadow-lg rounded-lg">
+        <button onClick={handlePlayClick} className="w-4/12 h-4/12 bg-beige-100 text-4xl text-white shadow-lg rounded-lg">
           Play
         </button>
         <button className="w-4/12 h-4/12 bg-beige-100 text-4xl text-white shadow-lg rounded-lg">
