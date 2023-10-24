@@ -44,6 +44,6 @@ div {
   background-color: #a28a6a; /* Darker beige color on hover */
 }
 
-p {
-  font-family: "IBM Plex Mono", monospace;
+p{
+  font-family: 'Noto Sans', sans-serif;
 }

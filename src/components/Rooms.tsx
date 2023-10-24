@@ -3,8 +3,14 @@ import "./Rooms.css";
 import { BiSearchAlt, BiSolidUser } from "react-icons/bi";
 import { FaEthereum } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 const Rooms = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
   const Box = () => {
     const numBoxes = 12; // Adjusted to 12 to match the provided code
 
@@ -66,7 +72,7 @@ const Rooms = () => {
             alt="Back Button"
             className="bg-white-100"
           />
-          <div className="text-5xl mt-2 text-white"> Loot Royale </div>
+          <div className="text-6xl mt-2 text-white"> Loot Royale </div>
         </div>
 
         <div className="text-white pr-10 flex gap-5">
@@ -207,19 +213,72 @@ const Rooms = () => {
           {/**Section 2 with Current reward and create room and quick join */}
           <div className="flex justify-between mt-4">
             <button className="text-beige-200 flex justify-center gap-6 items-center bg-white-beige-50 shadow-lg rounded-lg w-60 h-18 ml-10">
-              <BsCoin className="text-5xl"/>
+              <BsCoin className="text-5xl" />
               <div className="flex flex-col text-3xl justify-center items-center">
                 <div>Current Reward</div>
                 <div className="-mt-2">999,999,999</div>
               </div>
             </button>
             <div className="flex text-5xl gap-10 mr-10">
-              <button className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg">create room</button>
-              <button className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg">quick join</button>
+              <button
+                className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg"
+                onClick={toggleModal}
+              >
+                create room
+              </button>
+              <button className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg">
+                quick join
+              </button>
             </div>
           </div>
         </div>
       </div>
+      {isModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+          <div className="absolute w-full h-full bg-black opacity-50"></div>
+          <div className="bg-white-beige-50 w-2/6 h-3/10 z-10 relative rounded-md p-4">
+            {/* Modal content goes here */}
+            <div className="flex flex-col justify-center items-center text-beige-100 bg-white-beige-50 gap-6">
+              <h2 className="text-6xl border-b-2 border-beige-100 w-full text-center">
+                {" "}
+                ROOM CREATION
+              </h2>
+              <div className="flex mt-6">
+                <div className="text-5xl text-silver-100 bg-beige-100 rounded-full w-16 h-16 flex justify-center items-center">
+                  <FaEthereum />
+                </div>
+                <div className="flex flex-col ml-6">
+                  {" "}
+                  {/* added margin-left for spacing */}
+                  <div className="flex gap-4 justify-end">
+                    <h2 className="text-4xl">Stake Eth</h2>
+                    <input
+                      type="number"
+                      id="numberInput"
+                      min="0"
+                      max="999"
+                      step="0.1"
+                      className="border border-beige-100 text-3xl text-right w-28"
+                    />
+                  </div>
+                  <p className="text-right text-xs font-extrabold tracking-tighter">
+                    You need to decide how much eth each player
+                    <br />
+                    entering the game needs to stake.
+                  </p>
+                </div>
+              </div>
+
+              <button className=" text-5xl flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg">
+                create room
+              </button>
+            </div>
+            <button onClick={toggleModal} className="absolute top-4 right-4">
+              <AiFillCloseCircle className="text-beige-100" />
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

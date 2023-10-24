@@ -16,7 +16,9 @@ export default {
         'beige-100': '#9B8A70',
         'beige-200': '#706556',
         'discord-100': '#5865F2',
-        'twitter-100': "#1DA1F2"
+        'twitter-100': "#1DA1F2",
+        'silver-100':'#C0C0C0',
+        'silver-200':'#8B8B8B'
       }
     },
   },
