@@ -148,7 +148,7 @@ const Rooms = () => {
                   (row) => (
                     <div key={row} className="flex justify-between mb-4">
                       {/* Left small card */}
-                      <div className="flex-1 bg-white border border-beige-100 mr-2 rounded-md p-4">
+                      <div className="flex-1 bg-white-beige-100/30 border border-beige-100 mr-2 rounded-md p-4">
                         <div className="flex justify-between">
                           <div className="flex flex-col">
                             <div className="bg-beige-100 w-20 h-10 border gap-2 rounded-lg flex justify-center items-center relative z-10 text-white text-xl">
@@ -179,7 +179,7 @@ const Rooms = () => {
                         </div>
                       </div>
                       {/* Right small card */}
-                      <div className="flex-1 bg-white border border-beige-100 mr-2 rounded-md p-4">
+                      <div className="flex-1 bg-white-beige-100/30 border border-beige-100 mr-2 rounded-md p-4">
                         <div className="flex justify-between">
                           <div className="flex flex-col">
                             <div className="bg-beige-100 w-20 h-10 border gap-2 rounded-lg flex justify-center items-center relative z-10 text-white text-xl">
