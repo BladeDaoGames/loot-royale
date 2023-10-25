@@ -2,14 +2,15 @@ import { useState } from "react";
 import "./WaitingRoom.css";
 import { BiUserPlus } from "react-icons/bi";
 import { ImCross } from "react-icons/im";
-import { FaEthereum} from 'react-icons/fa';
+import { FaEthereum } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const WaitingRoom = () => {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  //   const handlePlayClick = () => {
-  //     navigate("/rooms");
-  //   };
+  const handlePlayClick = () => {
+    navigate("/in-game");
+  };
   const TabInterface = () => {
     const [activeTab, setActiveTab] = useState("Players");
 
@@ -105,7 +106,10 @@ const WaitingRoom = () => {
               className="border border-beige-100 text-3xl text-right w-28 bg-white-beige-50"
             />
           </div>
-          <button className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4">
+          <button
+            onClick={handlePlayClick}
+            className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4"
+          >
             Apply
           </button>
         </div>
@@ -233,7 +237,7 @@ const WaitingRoom = () => {
             </button>
             <button className="flex justify-center gap-4 items-center w-6/12 bg-beige-100 text-white shadow-lg rounded-lg pt-2 mr-6 pb-1">
               <div className="text-2xl text-beige-100 bg-white rounded-full w-10 h-10 flex justify-center items-center">
-                  <FaEthereum />
+                <FaEthereum />
               </div>
               <div className="-mb-1"> Stake 999 Eth to Start Game </div>
             </button>
