@@ -4,13 +4,18 @@ import { BiSearchAlt, BiSolidUser } from "react-icons/bi";
 import { FaEthereum } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Rooms = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
+  const navigate = useNavigate();
 
+  const handlePlayClick = () => {
+    navigate("/waiting");
+  };
   const Box = () => {
     const numBoxes = 12; // Adjusted to 12 to match the provided code
 
@@ -27,7 +32,7 @@ const Rooms = () => {
   };
 
   const TabInterface = () => {
-    const [activeTab, setActiveTab] = useState("Profile");
+    const [activeTab, setActiveTab] = useState("All");
 
     const tabs = [
       { label: "All", disabled: false },
@@ -112,7 +117,7 @@ const Rooms = () => {
             </div>
           </div>
           <div className="pt-4">
-            <button className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white">
+            <button className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-lg">
               CRAFT
             </button>
           </div>
@@ -258,7 +263,8 @@ const Rooms = () => {
                       min="0"
                       max="999"
                       step="0.1"
-                      className="border border-beige-100 text-3xl text-right w-28"
+                      value="999"
+                      className="border border-beige-100 text-3xl text-right w-28 bg-white-beige-50"
                     />
                   </div>
                   <p className="text-right text-xs font-extrabold tracking-tighter">
@@ -269,7 +275,10 @@ const Rooms = () => {
                 </div>
               </div>
 
-              <button className=" text-5xl flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg">
+              <button
+                onClick={handlePlayClick}
+                className=" text-5xl flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg"
+              >
                 create room
               </button>
             </div>

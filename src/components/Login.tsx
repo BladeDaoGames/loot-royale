@@ -29,7 +29,7 @@ const Login = () => {
           How to Play
         </button>
         <div className="flex justify-between items-center w-full mt-auto text-3xl">
-          <p className="font-bold pl-4">Feedback</p>
+          <p className="font-bold pl-4 underline">Feedback</p>
           <div className="flex gap-6">
             <div className="flex gap-1 justify-center items-center text-twitter-100">
               {" "}
