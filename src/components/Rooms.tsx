@@ -117,7 +117,7 @@ const Rooms = () => {
             </div>
           </div>
           <div className="pt-4">
-            <button className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-lg">
+            <button className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium">
               CRAFT
             </button>
           </div>

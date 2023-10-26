@@ -214,7 +214,7 @@ const WaitingRoom = () => {
                   {/**Blocked */}
                   <div className="relative flex flex-col justify-center items-center border border-beige-100 rounded-md shadow-right-bottom-medium w-1/3 h-1/3 bg-beige-200/2">
                     <div
-                      className="my-4 flex justify-center items-center bg-white-beige-100 border-2 border-dotted border-beige-100 rounded-md"
+                      className="my-4 flex justify-center items-center bg-white-beige-100/10 border-2 border-dotted border-beige-100 rounded-md"
                       style={{ width: "216px", height: "171px" }}
                     >
                       <ImCross
@@ -232,10 +232,10 @@ const WaitingRoom = () => {
           </div>
           {/**Section 2 with Current reward and create room and quick join */}
           <div className="flex justify-between mt-4 w-full text-5xl">
-            <button className="flex justify-center items-center w-48 bg-beige-100 text-white shadow-lg rounded-lg pt-2 ml-6">
+            <button className="flex justify-center items-center w-48 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 ml-6">
               Exit room
             </button>
-            <button className="flex justify-center gap-4 items-center w-6/12 bg-beige-100 text-white shadow-lg rounded-lg pt-2 mr-6 pb-1">
+            <button className="flex justify-center gap-4 items-center w-6/12 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 mr-6 pb-1">
               <div className="text-2xl text-beige-100 bg-white rounded-full w-10 h-10 flex justify-center items-center">
                 <FaEthereum />
               </div>

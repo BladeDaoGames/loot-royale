@@ -1,6 +1,13 @@
 import { AiOutlineEnter } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const InGame = () => {
+  const navigate = useNavigate();
+
+  const handlePlayClick = () => {
+    navigate("/reward"); // I noticed you had "/rooms" in the original handlePlayClick, so make sure to use the correct path.
+  };
+
   return (
     <>
       <div className="relative min-h-screen">
@@ -89,7 +96,7 @@ const InGame = () => {
         </div>
       </div>
       {/**move icon section */}
-      <div className="absolute bottom-20 right-20 z-20">
+      <div className="absolute bottom-20 right-20 z-20" onClick={handlePlayClick}>
         <img src="../../public/moveButtons.png" alt="move-buttons" />
       </div>
     </>
