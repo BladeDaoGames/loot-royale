@@ -73,7 +73,7 @@ const Rooms = () => {
       <div className="flex justify-between items-center pl-6 gap-10 bg-beige-100">
         <div className="flex items-center gap-4">
           <img
-            src="../../public/left_arrow.png"
+            src="/left_arrow.png"
             alt="Back Button"
             className="bg-white-100"
           />
@@ -86,7 +86,7 @@ const Rooms = () => {
             <div className="text-2xl -my-4 text-right"> 0x0f6a...1a60</div>
           </div>
           <div>
-            <img src="../../public/setting.png" alt="" />
+            <img src="/setting.png" alt="" />
           </div>
         </div>
       </div>

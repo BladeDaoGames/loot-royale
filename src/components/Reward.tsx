@@ -13,7 +13,7 @@ const Reward = () => {
       <div className="relative min-h-screen">
         <img
           className="object-cover w-full h-full absolute z-[-1]"
-          src="../../public/in-game.png"
+          src="/in-game.png"
           alt="background"
         />
         <div className="absolute inset-0 bg-black opacity-30 z-10"></div>

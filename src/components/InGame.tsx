@@ -13,7 +13,7 @@ const InGame = () => {
       <div className="relative min-h-screen">
         <img
           className="object-cover w-full h-full absolute z-[-1]"
-          src="../../public/in-game.png"
+          src="/in-game.png"
           alt="background"
         />
         <div className="absolute inset-0 z-10"></div>
@@ -97,7 +97,7 @@ const InGame = () => {
       </div>
       {/**move icon section */}
       <div className="absolute bottom-20 right-20 z-20" onClick={handlePlayClick}>
-        <img src="../../public/moveButtons.png" alt="move-buttons" />
+        <img src="/moveButtons.png" alt="move-buttons" />
       </div>
     </>
   );

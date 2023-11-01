@@ -49,7 +49,7 @@ const WaitingRoom = () => {
       <div className="flex justify-between items-center pl-6 gap-10 bg-beige-100">
         <div className="flex items-center gap-4">
           <img
-            src="../../public/left_arrow.png"
+            src="/left_arrow.png"
             alt="Back Button"
             className="bg-white-100"
           />
@@ -62,7 +62,7 @@ const WaitingRoom = () => {
             <div className="text-2xl -my-4 text-right"> 0x0f6a...1a60</div>
           </div>
           <div>
-            <img src="../../public/setting.png" alt="" />
+            <img src="/setting.png" alt="" />
           </div>
         </div>
       </div>
@@ -77,16 +77,16 @@ const WaitingRoom = () => {
           <div className="flex flex-col justify-center items-center border border-beige-100 rounded-md shadow-right-bottom-medium w-11/12 h-11/12 bg-beige-200/2">
             <img
               className="w-9/12 py-4"
-              src="../../public/default_map.png"
+              src="/default_map.png"
               alt=""
             />
             <div className="flex justify-center items-center gap-10">
-              <img src="../../public/polygon_arrow_left.png" alt="" />
+              <img src="/polygon_arrow_left.png" alt="" />
               <div className="text-4xl -mb-1 tracking-wider text-beige-100">
                 {" "}
                 Ninja Village (10x10){" "}
               </div>
-              <img src="../../public/polygon_arrow_right.png" alt="" />
+              <img src="/polygon_arrow_right.png" alt="" />
             </div>
             <div className="text-center text-beige-100 font-thin border border-beige-100 bg-white-beige-50 w-10/12 h-8/12 text-3xl rounded-md shadow-md mt-2 mb-6 leading-very-tight py-1.5">
               Drenched in Secrecy, a ninja village emerges from misty mountains,
@@ -129,12 +129,12 @@ const WaitingRoom = () => {
                   <div className="relative flex flex-col justify-center items-center border border-beige-100 rounded-md shadow-right-bottom-medium w-1/3 h-1/3 bg-beige-200/2">
                     <img
                       className="py-4 z-1"
-                      src="../../public/klee.png"
+                      src="/klee.png"
                       alt="klee"
                     />
                     <img
                       className="absolute top-0 left-0 -mt-1 -ml-1"
-                      src="../../public/owner_tag.png"
+                      src="/owner_tag.png"
                       alt="owner_tag"
                     />
                     <div
@@ -154,7 +154,7 @@ const WaitingRoom = () => {
                   <div className="relative flex flex-col justify-center items-center border border-beige-100 rounded-md shadow-right-bottom-medium w-1/3 h-1/3 bg-beige-200/2">
                     <img
                       className="py-4 z-1"
-                      src="../../public/venti.png"
+                      src="/venti.png"
                       alt="venti"
                     />
                     <div className="flex justify-between items-center w-9/12  -mt-2">
@@ -168,7 +168,7 @@ const WaitingRoom = () => {
                   <div className="relative flex flex-col justify-center items-center border border-beige-100 rounded-md shadow-right-bottom-medium w-1/3 h-1/3 bg-beige-200/2">
                     <img
                       className="py-4 z-1"
-                      src="../../public/eula.png"
+                      src="/eula.png"
                       alt="eula"
                     />
                     <div className="flex justify-between items-center w-9/12 -mt-2">
