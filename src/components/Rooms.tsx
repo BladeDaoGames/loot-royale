@@ -11,6 +11,16 @@ const Rooms = () => {
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
+  
+  // Classes for the modal container, includes conditional logic for translate
+  const modalContainerClasses = `fixed inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out z-50 ${
+    isModalOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+  }`;
+
+  // Classes for the modal content, includes conditional logic for translate
+  const modalContentClasses = `flex flex-col justify-center items-center text-gray-800 bg-white p-6 gap-6 rounded shadow-xl transform transition-all duration-300 ease-in-out ${
+    isModalOpen ? 'translate-x-0 translate-y-0' : 'translate-x-1/2 -translate-y-1/2'
+  }`;
   const navigate = useNavigate();
 
   const handlePlayClick = () => {
@@ -245,54 +255,52 @@ const Rooms = () => {
       </div>
       {isModalOpen && (
 
-        <div className={`fixed top-0 left-0 w-full h-full flex items-center justify-center z-50 ${isModalOpen ? 'modal-open' : ''}`}>
-          <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
             <div className="absolute w-full h-full bg-black opacity-50"></div>
-            <div className="bg-white-beige-50 w-2/6 h-3/10 z-10 relative rounded-md p-4 modal-animation-enter">
-              {/* Modal content goes here */}
-              <div className="flex flex-col justify-center items-center text-beige-100 bg-white-beige-50 gap-6">
-                <h2 className="text-6xl border-b-2 border-beige-100 w-full text-center">
-                  {" "}
-                  ROOM CREATION
-                </h2>
-                <div className="flex mt-6">
-                  <div className="text-5xl text-silver-100 bg-beige-100 rounded-full w-16 h-16 flex justify-center items-center">
-                    <FaEthereum />
-                  </div>
-                  <div className="flex flex-col ml-6">
-                    {" "}
-                    {/* added margin-left for spacing */}
-                    <div className="flex gap-4 justify-end">
-                      <h2 className="text-4xl">Stake Eth</h2>
-                      <input
-                        type="number"
-                        id="numberInput"
-                        min="0"
-                        max="999"
-                        step="0.1"
-                        value="999"
-                        className="border border-beige-100 text-3xl text-right w-28 bg-white-beige-50"
-                      />
-                    </div>
-                    <p className="text-right text-xs font-extrabold tracking-tighter">
-                      You need to decide how much eth each player
-                      <br />
-                      entering the game needs to stake.
-                    </p>
-                  </div>
+            <div className="bg-white-beige-50 w-2/6 h-3/10 z-10 relative rounded-md p-4">
+            {/* Modal content goes here */}
+            <div className="flex flex-col justify-center items-center text-beige-100 bg-white-beige-50 gap-6">
+              <h2 className="text-6xl border-b-2 border-beige-100 w-full text-center">
+                {" "}
+                ROOM CREATION
+              </h2>
+              <div className="flex mt-6">
+                <div className="text-5xl text-silver-100 bg-beige-100 rounded-full w-16 h-16 flex justify-center items-center">
+                  <FaEthereum />
                 </div>
-
-                <button
-                  onClick={handlePlayClick}
-                  className=" text-5xl flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg button-hover-scale button-click-shrink"
-                >
-                  create room
-                </button>
+                <div className="flex flex-col ml-6">
+                  {" "}
+                  {/* added margin-left for spacing */}
+                  <div className="flex gap-4 justify-end">
+                    <h2 className="text-4xl">Stake Eth</h2>
+                    <input
+                      type="number"
+                      id="numberInput"
+                      min="0"
+                      max="999"
+                      step="0.1"
+                      value="999"
+                      className="border border-beige-100 text-3xl text-right w-28 bg-white-beige-50"
+                    />
+                  </div>
+                  <p className="text-right text-xs font-extrabold tracking-tighter">
+                    You need to decide how much eth each player
+                    <br />
+                    entering the game needs to stake.
+                  </p>
+                </div>
               </div>
-              <button onClick={toggleModal} className="absolute top-4 right-4">
-                <AiFillCloseCircle className="text-beige-100" />
+
+              <button
+                onClick={handlePlayClick}
+                className=" text-5xl flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg button-hover-scale button-click-shrink"
+              >
+                create room
               </button>
             </div>
+            <button onClick={toggleModal} className="absolute top-4 right-4">
+              <AiFillCloseCircle className="text-beige-100" />
+            </button>
           </div>
         </div>
       )}
