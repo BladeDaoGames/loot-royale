@@ -11,6 +11,10 @@ const WaitingRoom = () => {
   const handlePlayClick = () => {
     navigate("/in-game");
   };
+
+  const handleBackClick = () => {
+    navigate("/rooms");
+  };
   const TabInterface = () => {
     const [activeTab, setActiveTab] = useState("Players");
 
@@ -26,13 +30,12 @@ const WaitingRoom = () => {
                 e.preventDefault();
                 if (!tab.disabled) setActiveTab(tab.label);
               }}
-              className={`inline-block px-6 rounded-t-lg text-2xl font-bold ${
-                tab.disabled
+              className={`inline-block px-6 rounded-t-lg text-2xl font-bold ${tab.disabled
                   ? "text-white cursor-not-allowed dark:text-beige-100"
                   : activeTab === tab.label
-                  ? "text-white bg-beige-100"
-                  : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-black dark:hover:text-gray-300 bg-white border border-beige-100"
-              }`}
+                    ? "text-white bg-beige-100"
+                    : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-black dark:hover:text-gray-300 bg-white border border-beige-100"
+                }`}
             >
               {tab.label}
             </a>
@@ -47,11 +50,11 @@ const WaitingRoom = () => {
       {" "}
       {/**Navbar section */}
       <div className="flex justify-between items-center pl-6 gap-10 bg-beige-100">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4" onClick={handleBackClick}>
           <img
             src="/left_arrow.png"
             alt="Back Button"
-            className="bg-white-100"
+            className="bg-white-100 button-hover-scale button-click-shrink cursor-pointer"
           />
           <div className="text-6xl mt-2 text-white"> Loot Royale </div>
         </div>
@@ -108,7 +111,7 @@ const WaitingRoom = () => {
           </div>
           <button
             onClick={handlePlayClick}
-            className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4"
+            className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4 button-hover-scale button-click-shrink"
           >
             Apply
           </button>
@@ -232,10 +235,12 @@ const WaitingRoom = () => {
           </div>
           {/**Section 2 with Current reward and create room and quick join */}
           <div className="flex justify-between mt-4 w-full text-5xl">
-            <button className="flex justify-center items-center w-48 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 ml-6">
+            <button
+              className="flex justify-center items-center w-48 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 ml-6 button-hover-scale button-click-shrink"
+              onClick={handleBackClick}>
               Exit room
             </button>
-            <button className="flex justify-center gap-4 items-center w-6/12 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 mr-6 pb-1">
+            <button className="flex justify-center gap-4 items-center w-6/12 bg-beige-100 text-white shadow-right-bottom-medium rounded-lg pt-2 mr-6 pb-1 button-hover-scale button-click-shrink">
               <div className="text-2xl text-beige-100 bg-white rounded-full w-10 h-10 flex justify-center items-center">
                 <FaEthereum />
               </div>

@@ -51,9 +51,8 @@ const Reward = () => {
                     .map((_, idx) => (
                       <tr
                         key={idx}
-                        className={`text-center font-serif ${
-                          idx === 1 ? "bg-beige-300 text-white" : ""
-                        }`}
+                        className={`text-center font-serif ${idx === 1 ? "bg-beige-300 text-white" : ""
+                          }`}
                       >
                         <td className="p-2">No.{idx + 1}</td>
                         <td className="p-2">Player{idx + 1}</td>
@@ -71,7 +70,7 @@ const Reward = () => {
             {/* Back to lobby button */}
             <button
               onClick={handlePlayClick}
-              className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4"
+              className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4 button-click-shrink cursor-pointer"
             >
               Back to lobby
             </button>
