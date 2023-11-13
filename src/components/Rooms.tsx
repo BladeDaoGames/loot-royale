@@ -12,15 +12,6 @@ const Rooms = () => {
     setModalOpen(!isModalOpen);
   };
   
-  // Classes for the modal container, includes conditional logic for translate
-  const modalContainerClasses = `fixed inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out z-50 ${
-    isModalOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-  }`;
-
-  // Classes for the modal content, includes conditional logic for translate
-  const modalContentClasses = `flex flex-col justify-center items-center text-gray-800 bg-white p-6 gap-6 rounded shadow-xl transform transition-all duration-300 ease-in-out ${
-    isModalOpen ? 'translate-x-0 translate-y-0' : 'translate-x-1/2 -translate-y-1/2'
-  }`;
   const navigate = useNavigate();
 
   const handlePlayClick = () => {
@@ -257,7 +248,7 @@ const Rooms = () => {
 
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
             <div className="absolute w-full h-full bg-black opacity-50"></div>
-            <div className="bg-white-beige-50 w-2/6 h-3/10 z-10 relative rounded-md p-4">
+            <div className="bg-white-beige-50 w-2/6 h-3/10 z-10 relative rounded-md p-4 modal-slide-down">
             {/* Modal content goes here */}
             <div className="flex flex-col justify-center items-center text-beige-100 bg-white-beige-50 gap-6">
               <h2 className="text-6xl border-b-2 border-beige-100 w-full text-center">
