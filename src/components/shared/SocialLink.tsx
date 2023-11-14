@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 interface SocialLinkProps {
   icon: React.ReactNode;
   label: string;
@@ -5,11 +7,24 @@ interface SocialLinkProps {
 }
 
 export const SocialLink = ({ icon, label, className }: SocialLinkProps) => {
+  const hoverAnimation = {
+    scale: 1.1,
+    rotate: 1.5,
+    // Add a transition effect if needed
+    transition: {
+      type: "spring",
+      stiffness: 300,
+    }
+  };
+
   return (
-    <div className={`flex gap-1 justify-center items-center ${className}`}>
+    <motion.div 
+      className={`flex gap-1 justify-center items-center cursor-pointer ${className}`}
+      whileHover={hoverAnimation}
+    >
       {icon}
       <div className="-mb-1">{label}</div>
-    </div>
+    </motion.div>
   );
 };
 

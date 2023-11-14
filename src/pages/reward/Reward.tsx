@@ -1,13 +1,8 @@
-// import { ImArrowRight } from 'react-icons/im';
-
-import { useNavigate } from "react-router-dom";
+import useCustomNavigation from "../../routing/Navigation";
 
 const Reward = () => {
-  const navigate = useNavigate();
+  const { goToRooms } = useCustomNavigation();
 
-  const handlePlayClick = () => {
-    navigate("/rooms");
-  };
   return (
     <>
       <div className="relative min-h-screen">
@@ -70,7 +65,7 @@ const Reward = () => {
 
             {/* Back to lobby button */}
             <button
-              onClick={handlePlayClick}
+              onClick={goToRooms}
               className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4 button-click-shrink cursor-pointer"
             >
               Back to lobby

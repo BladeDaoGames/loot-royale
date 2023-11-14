@@ -1,12 +1,8 @@
 import { AiOutlineEnter } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import useCustomNavigation from "../../routing/Navigation";
 
 const InGame = () => {
-  const navigate = useNavigate();
-
-  const handlePlayClick = () => {
-    navigate("/reward"); // I noticed you had "/rooms" in the original handlePlayClick, so make sure to use the correct path.
-  };
+  const {  goToReward } = useCustomNavigation();
 
   return (
     <>
@@ -98,7 +94,7 @@ const InGame = () => {
       {/**move icon section */}
       <div
         className="absolute bottom-20 right-20 z-20"
-        onClick={handlePlayClick}
+        onClick={goToReward}
       >
         <img src="/moveButtons.png" alt="move-buttons" />
       </div>

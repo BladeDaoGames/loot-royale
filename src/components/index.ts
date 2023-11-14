@@ -5,5 +5,6 @@ import TabInterface from "./shared/TabInterface";
 import RoomModal from "./rooms/RoomModal";
 import Navbar from "./shared/Navbar";
 import Search from "./rooms/Search";
+import MapSelection from "./waitingRoom/waitingMapSelection";
 
-export { Button, SocialLink, Boxes, TabInterface, RoomModal, Navbar, Search };
+export { Button, SocialLink, Boxes, TabInterface, RoomModal, Navbar, Search, MapSelection };

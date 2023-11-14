@@ -3,7 +3,6 @@ import "./Rooms.css";
 import { BiSearchAlt, BiSolidUser } from "react-icons/bi";
 import { FaEthereum } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
 import {
   Boxes,
   Button,
@@ -12,25 +11,22 @@ import {
   Search,
   TabInterface,
 } from "../../components";
+import useCustomNavigation from "../../routing/Navigation";
 
 const Rooms = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
+  const { goToHome, goToWaiting } = useCustomNavigation();
 
-  const navigate = useNavigate();
-
-  const handlePlayClick = () => {
-    navigate("/waiting");
-  };
-
-  const handleBackClick = () => {
-    navigate("/");
-  };
   const ethBalance = "999,999,999,999 ETH";
   const walletAddress = "0x0f6a...1a60";
-
+  const tabs = [
+    { label: "All", disabled: false },
+    { label: "Visitable", disabled: false },
+    { label: "Waiting", disabled: false },
+  ];
   const handleSearch = (searchQuery: string) => {
     // Logic to handle search action, e.g., filtering rooms
   };
@@ -40,7 +36,7 @@ const Rooms = () => {
       {" "}
       {/**Navbar section */}
       <Navbar
-        onBackClick={handleBackClick}
+        onBackClick={goToHome}
         ethBalance={ethBalance}
         walletAddress={walletAddress}
       />
@@ -65,7 +61,7 @@ const Rooms = () => {
           <div className="flex flex-col m-4">
             <div className="flex justify-between">
               <Search onSearch={handleSearch} />
-              <TabInterface />
+              <TabInterface tabs={tabs} initialActiveTab="All"/>
             </div>
             <div className="bg-white-beige-50 w-full h-full border border-beige-100 rounded-md -mt-0.5">
               {/* Main scrollable card */}
@@ -163,7 +159,7 @@ const Rooms = () => {
               </Button>
               <Button
                 className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg text-5xl"
-                onClick={handlePlayClick}
+                onClick={goToWaiting}
               >
                 quick join
               </Button>
