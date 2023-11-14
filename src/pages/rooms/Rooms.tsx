@@ -5,6 +5,7 @@ import { FaEthereum } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { Navbar, TabInterface } from "../../components";
 
 const Rooms = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -35,65 +36,15 @@ const Rooms = () => {
       </>
     );
   };
-
-  const TabInterface = () => {
-    const [activeTab, setActiveTab] = useState("All");
-
-    const tabs = [
-      { label: "All", disabled: false },
-      { label: "Visitable", disabled: false },
-      { label: "Waiting", disabled: false },
-    ];
-
-    return (
-      <ul className="mt-2 flex flex-wrap text-sm font-medium text-center text-beige-100 dark:border-gray-700 dark:text-gray-400">
-        {tabs.map((tab) => (
-          <li key={tab.label}>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                if (!tab.disabled) setActiveTab(tab.label);
-              }}
-              className={`inline-block px-6 rounded-t-lg text-2xl font-bold ${tab.disabled
-                ? "text-white cursor-not-allowed dark:text-beige-100"
-                : activeTab === tab.label
-                  ? "text-white bg-beige-100"
-                  : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-black dark:hover:text-gray-300 bg-white border border-beige-100"
-                }`}
-            >
-              {tab.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    );
-  };
+  const ethBalance = "999,999,999,999 ETH";
+  const walletAddress = "0x0f6a...1a60";
 
   return (
     <>
       {" "}
       {/**Navbar section */}
-      <div className="flex justify-between items-center pl-6 gap-10 bg-beige-100">
-        <div className="flex items-center gap-4" onClick={handleBackClick}>
-          <img
-            src="/left_arrow.png"
-            alt="Back Button"
-            className="bg-white-100 button-hover-scale button-click-shrink cursor-pointer"
-          />
-          <div className="text-6xl mt-2 text-white"> Loot Royale </div>
-        </div>
+      <Navbar onBackClick={handleBackClick} ethBalance={ethBalance} walletAddress={walletAddress} />
 
-        <div className="text-white pr-10 flex gap-5">
-          <div>
-            <div className="text-4xl"> 999,999,999,999 ETH</div>
-            <div className="text-2xl -my-4 text-right"> 0x0f6a...1a60</div>
-          </div>
-          <div>
-            <img src="/setting.png" alt="" />
-          </div>
-        </div>
-      </div>
       {/**bottom page layout section */}
       <div className="flex h-screen">
         {/**Left Page section */}
