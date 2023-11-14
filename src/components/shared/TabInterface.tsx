@@ -18,12 +18,13 @@ const TabInterface = () => {
               e.preventDefault();
               if (!tab.disabled) setActiveTab(tab.label);
             }}
-            className={`inline-block px-6 rounded-t-lg text-2xl font-bold ${tab.disabled
-              ? "text-white cursor-not-allowed dark:text-beige-100"
-              : activeTab === tab.label
+            className={`inline-block px-6 rounded-t-lg text-2xl font-bold ${
+              tab.disabled
+                ? "text-white cursor-not-allowed dark:text-beige-100"
+                : activeTab === tab.label
                 ? "text-white bg-beige-100"
                 : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-black dark:hover:text-gray-300 bg-white border border-beige-100"
-              }`}
+            }`}
           >
             {tab.label}
           </a>

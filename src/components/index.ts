@@ -1,17 +1,9 @@
-import Button from './shared/Button'
-import SocialLink from './shared/SocialLink'
-import Box from './rooms/Box'
-import TabInterface from './shared/TabInterface'
-import Modal from './rooms/RoomModal'
-import RoomCard from './rooms/RoomCard'
-import Navbar from './shared/Navbar'
+import Button from "./shared/Button";
+import SocialLink from "./shared/SocialLink";
+import Boxes from "./rooms/Boxes";
+import TabInterface from "./shared/TabInterface";
+import RoomModal from "./rooms/RoomModal";
+import Navbar from "./shared/Navbar";
+import Search from "./rooms/Search";
 
-export{
-    Button,
-    SocialLink,
-    Box,
-    TabInterface,
-    Modal,
-    RoomCard,
-    Navbar
-}
+export { Button, SocialLink, Boxes, TabInterface, RoomModal, Navbar, Search };

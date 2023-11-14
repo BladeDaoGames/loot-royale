@@ -51,8 +51,9 @@ const Reward = () => {
                     .map((_, idx) => (
                       <tr
                         key={idx}
-                        className={`text-center font-serif ${idx === 1 ? "bg-beige-300 text-white" : ""
-                          }`}
+                        className={`text-center font-serif ${
+                          idx === 1 ? "bg-beige-300 text-white" : ""
+                        }`}
                       >
                         <td className="p-2">No.{idx + 1}</td>
                         <td className="p-2">Player{idx + 1}</td>

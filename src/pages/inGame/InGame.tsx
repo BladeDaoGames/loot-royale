@@ -96,7 +96,10 @@ const InGame = () => {
         </div>
       </div>
       {/**move icon section */}
-      <div className="absolute bottom-20 right-20 z-20" onClick={handlePlayClick}>
+      <div
+        className="absolute bottom-20 right-20 z-20"
+        onClick={handlePlayClick}
+      >
         <img src="/moveButtons.png" alt="move-buttons" />
       </div>
     </>

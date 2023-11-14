@@ -3,16 +3,22 @@ import "./Rooms.css";
 import { BiSearchAlt, BiSolidUser } from "react-icons/bi";
 import { FaEthereum } from "react-icons/fa";
 import { BsCoin } from "react-icons/bs";
-import { AiFillCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { Navbar, TabInterface } from "../../components";
+import {
+  Boxes,
+  Button,
+  Navbar,
+  RoomModal,
+  Search,
+  TabInterface,
+} from "../../components";
 
 const Rooms = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
-  
+
   const navigate = useNavigate();
 
   const handlePlayClick = () => {
@@ -22,59 +28,35 @@ const Rooms = () => {
   const handleBackClick = () => {
     navigate("/");
   };
-  const Box = () => {
-    const numBoxes = 12; // Adjusted to 12 to match the provided code
-
-    return (
-      <>
-        {Array.from({ length: numBoxes }).map((_, index) => (
-          <div
-            key={index}
-            className="border-2 border-beige-100 bg-white-beige-50 rounded-xl h-14 w-14"
-          ></div>
-        ))}
-      </>
-    );
-  };
   const ethBalance = "999,999,999,999 ETH";
   const walletAddress = "0x0f6a...1a60";
+
+  const handleSearch = (searchQuery: string) => {
+    // Logic to handle search action, e.g., filtering rooms
+  };
 
   return (
     <>
       {" "}
       {/**Navbar section */}
-      <Navbar onBackClick={handleBackClick} ethBalance={ethBalance} walletAddress={walletAddress} />
-
+      <Navbar
+        onBackClick={handleBackClick}
+        ethBalance={ethBalance}
+        walletAddress={walletAddress}
+      />
       {/**bottom page layout section */}
       <div className="flex h-screen">
         {/**Left Page section */}
         <div className="flex flex-col items-center bg-white-beige-200/50 w-4/12">
-          <div>
-            <div className="text-beige-100 text-5xl pl-6 pt-2 tracking-wider">
-              {" "}
-              Inventory{" "}
-            </div>
-            <div className="flex items-center">
-              <div className="border-2 border-beige-100 bg-white-beige-50 rounded-xl mx-8 grid grid-cols-4 gap-2 p-4">
-                <Box />
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="text-beige-100 text-5xl pl-6 pt-4 tracking-wider">
-              {" "}
-              Crafting{" "}
-            </div>
-            <div className="flex items-center">
-              <div className="border-2 border-beige-100 bg-white-beige-50 rounded-xl mx-8 grid grid-cols-4 gap-2 p-4">
-                <Box />
-              </div>
-            </div>
-          </div>
+          <Boxes title={"Inventory"} className={""} />
+          <Boxes title={"Crafting"} className={""} />
           <div className="pt-4">
-            <button className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium button-hover-scale button-click-shrink">
+            <Button
+              onClick={() => {}}
+              className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium"
+            >
               CRAFT
-            </button>
+            </Button>
           </div>
         </div>
         {/**Right Page section */}
@@ -82,17 +64,7 @@ const Rooms = () => {
           {/**Section 1 with search, tabs and rooms Page section */}
           <div className="flex flex-col m-4">
             <div className="flex justify-between">
-              <form className="search-container">
-                <input
-                  type="text"
-                  placeholder="Search room by owner or room id"
-                  className="search-input border rounded-md border-beige-100 text-xl p-1"
-                />
-                <BiSearchAlt className="search-icon" />
-                <button type="submit" style={{ display: "none" }}>
-                  Search
-                </button>
-              </form>
+              <Search onSearch={handleSearch} />
               <TabInterface />
             </div>
             <div className="bg-white-beige-50 w-full h-full border border-beige-100 rounded-md -mt-0.5">
@@ -172,80 +144,35 @@ const Rooms = () => {
           </div>
           {/**Section 2 with Current reward and create room and quick join */}
           <div className="flex justify-between mt-4">
-            <button className="text-beige-200 flex justify-center gap-6 items-center bg-white-beige-50 shadow-lg rounded-lg w-60 h-18 ml-10">
+            <Button
+              onClick={() => {}}
+              className="text-beige-200 flex justify-center gap-6 items-center bg-white-beige-50 shadow-lg rounded-lg w-60 h-18 ml-10"
+            >
               <BsCoin className="text-5xl" />
               <div className="flex flex-col text-3xl justify-center items-center">
                 <div>Current Reward</div>
                 <div className="-mt-2">999,999,999</div>
               </div>
-            </button>
-            <div className="flex text-5xl gap-10 mr-10">
-              <button
-                className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg button-hover-scale button-click-shrink"
+            </Button>
+            <div className="flex gap-10 mr-10">
+              <Button
+                className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg text-5xl"
                 onClick={toggleModal}
               >
                 create room
-              </button>
-              <button
-                className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg button-hover-scale button-click-shrink"
-                onClick={handlePlayClick}>
+              </Button>
+              <Button
+                className="flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg text-5xl"
+                onClick={handlePlayClick}
+              >
                 quick join
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </div>
-      {isModalOpen && (
-
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
-            <div className="absolute w-full h-full bg-black opacity-50"></div>
-            <div className="bg-white-beige-50 w-2/6 h-3/10 z-10 relative rounded-md p-4 modal-slide-down">
-            {/* Modal content goes here */}
-            <div className="flex flex-col justify-center items-center text-beige-100 bg-white-beige-50 gap-6">
-              <h2 className="text-6xl border-b-2 border-beige-100 w-full text-center">
-                {" "}
-                ROOM CREATION
-              </h2>
-              <div className="flex mt-6">
-                <div className="text-5xl text-silver-100 bg-beige-100 rounded-full w-16 h-16 flex justify-center items-center">
-                  <FaEthereum />
-                </div>
-                <div className="flex flex-col ml-6">
-                  {" "}
-                  {/* added margin-left for spacing */}
-                  <div className="flex gap-4 justify-end">
-                    <h2 className="text-4xl">Stake Eth</h2>
-                    <input
-                      type="number"
-                      id="numberInput"
-                      min="0"
-                      max="999"
-                      step="0.1"
-                      value="999"
-                      className="border border-beige-100 text-3xl text-right w-28 bg-white-beige-50"
-                    />
-                  </div>
-                  <p className="text-right text-xs font-extrabold tracking-tighter">
-                    You need to decide how much eth each player
-                    <br />
-                    entering the game needs to stake.
-                  </p>
-                </div>
-              </div>
-
-              <button
-                onClick={handlePlayClick}
-                className=" text-5xl flex justify-center items-center w-48 h-18 bg-beige-100 text-white shadow-lg rounded-lg button-hover-scale button-click-shrink"
-              >
-                create room
-              </button>
-            </div>
-            <button onClick={toggleModal} className="absolute top-4 right-4">
-              <AiFillCloseCircle className="text-beige-100" />
-            </button>
-          </div>
-        </div>
-      )}
+      {/** Modal popup */}
+      <RoomModal isOpen={isModalOpen} toggleModal={toggleModal} />
     </>
   );
 };
