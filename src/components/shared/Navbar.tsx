@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 interface NavbarProps {
@@ -9,15 +10,23 @@ interface NavbarProps {
 class Navbar extends React.Component<NavbarProps> {
   render() {
     const { onBackClick, ethBalance, walletAddress } = this.props;
-
+    const ButtonHoverAnimation = {
+      scale: 1.05,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+      },
+    };
     return (
       <div className="flex justify-between items-center pl-6 gap-10 bg-beige-100">
         <div className="flex items-center gap-4" onClick={onBackClick}>
-          <img
-            src="/left_arrow.png"
-            alt="Back Button"
-            className="bg-white-100 button-hover-scale button-click-shrink cursor-pointer"
-          />
+          <motion.div whileHover={ButtonHoverAnimation}>
+            <img
+              src="/left_arrow.png"
+              alt="Back Button"
+              className="bg-white-100 button-hover-scale button-click-shrink cursor-pointer"
+            />
+          </motion.div>
           <div className="text-6xl mt-2 text-white"> Loot Royale </div>
         </div>
 

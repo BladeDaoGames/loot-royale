@@ -1,16 +1,30 @@
+import { motion } from "framer-motion";
+
 interface ButtonProps {
-    onClick: () => void;
-    children: React.ReactNode;
-    className?: string;
+  onClick: () => void;
+  children: React.ReactNode;
+  className?: string;
 }
 
 export const Button = ({ onClick, children, className }: ButtonProps) => {
-    const buttonClass = `text-4xl button-hover-scale button-click-shrink ${className || ''}`;
-    return (
-        <button onClick={onClick} className={buttonClass}>
-            {children}
-        </button>
-    )
-}
+  const ButtonHoverAnimation = {
+    scale: 1.05,
+    transition: {
+      type: "spring",
+      stiffness: 150,
+    },
+  };
 
+  const buttonClass = `cursor-pointer ${className}`;
+
+  return (
+    <motion.div
+      whileHover={ButtonHoverAnimation}
+      onClick={onClick}
+      className={buttonClass}
+    >
+      {children}
+    </motion.div>
+  );
+};
 export default Button;

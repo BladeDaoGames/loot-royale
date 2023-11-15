@@ -47,7 +47,7 @@ const MapSelection = ({ onApply }: MapSelectionProps) => {
       {/* Apply button */}
       <Button
         onClick={onApply}
-        className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4"
+        className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium mt-4 flex justify-center"
       >
         Apply
       </Button>

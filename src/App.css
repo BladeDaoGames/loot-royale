@@ -1,8 +1,0 @@
-.button-hover-scale:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-}
-
-.button-click-shrink:active {
-    transform: scale(0.95);
-}

@@ -49,7 +49,7 @@ const Rooms = () => {
           <div className="pt-4">
             <Button
               onClick={() => {}}
-              className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium"
+              className="w-48 bg-beige-100 border-1 pt-2 rounded-lg text-5xl text-white shadow-right-bottom-medium flex justify-center"
             >
               CRAFT
             </Button>
