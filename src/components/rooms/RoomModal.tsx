@@ -55,7 +55,7 @@ const RoomModal = ({ isOpen, toggleModal }: RoomModalProps) => {
             Create Room
           </Button>
         </div>
-        <Button onClick={toggleModal} className="absolute top-4 right-4 text-white">
+        <Button onClick={toggleModal} className="absolute top-4 right-4 text-white text-4xl">
           <AiFillCloseCircle className="text-beige-100" />
         </Button>
       </div>
