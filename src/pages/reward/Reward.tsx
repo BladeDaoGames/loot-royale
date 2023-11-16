@@ -1,10 +1,26 @@
+import { motion } from "framer-motion";
 import { Button } from "../../components";
 import RewardTable from "../../components/reward/rewardTable";
 import useCustomNavigation from "../../routing/Navigation";
 
 const Reward = () => {
   const { goToRooms } = useCustomNavigation();
-
+  const tableVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1, type: "spring", stiffness: 120 },
+    },
+  };
+  const youWinVariants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1, delay: 0.5, type: "spring", stiffness: 120 },
+    },
+  };
   return (
     <>
       <div className="relative min-h-screen">
@@ -17,14 +33,24 @@ const Reward = () => {
 
         <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center justify-center">
           {/* You win header tag */}
-          <div className="text-9xl-plus bg-text-gradient text-transparent bg-clip-text z-40 tracking-widest">
+          <motion.div
+            variants={youWinVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-9xl-plus bg-text-gradient text-transparent bg-clip-text z-40 tracking-widest"
+          >
             YOU WIN
-          </div>
+          </motion.div>
 
-          <div className="border border-beige-100 flex flex-col justify-center items-center w-full h-full p-4 rounded-lg bg-beige-75 -mt-32">
+          <motion.div
+            variants={tableVariants}
+            initial="hidden"
+            animate="visible"
+            className="border border-beige-100 flex flex-col justify-center items-center w-full h-full p-4 rounded-lg bg-beige-75 -mt-32"
+          >
             <div className="relative w-11/12">
               {/* Table content */}
-              <RewardTable/>
+              <RewardTable />
 
               {/* Arrow and YOU WIN text */}
             </div>
@@ -36,7 +62,7 @@ const Reward = () => {
             >
               Back to lobby
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
